@@ -11,5 +11,6 @@
 		<s:password name="password" key="pass" />
 		<s:submit key="login" />
 	</s:form>
+	Test
 </body>
 </html>
