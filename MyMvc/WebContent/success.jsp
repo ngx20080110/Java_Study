@@ -10,8 +10,9 @@
 		<s:param>${sessionScope.user}</s:param>
 	</s:text>
 	<br />
-	<s:property value="tips" />
-	<br /> ${tips}
+	<s:property value="tip" />
+	<br /> ${tip}
 	<br /> Cookie: ${cookie.user.value}
+	<br /> ${requestScope.extra}
 </body>
 </html>
