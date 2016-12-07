@@ -6,7 +6,17 @@
 	<constant name="struts.custom.i18n.resources" value="global" />
 	
 	<package name="mymvc" extends="struts-default">
-		<action name="login" class="com.ngx20080110.action.LoginRegistAction">
+		<global-results>
+			<result name="sql">/exception.jsp</result>
+			<result name="root">/exception.jsp</result>
+		</global-results>
+		<global-exception-mappings>
+			<exception-mapping result="sql" exception="java.sql.SQLException" />
+			<exception-mapping result="root" exception="java.lang.Exception" />
+		</global-exception-mappings>
+		<action name="login" class="com.ngx20080110.action.LoginAction4">
+			<exception-mapping result="my" exception="com.ngx20080110.exception.MyException" />
+			<result name="my">/exception.jsp</result>
 			<result name="input">/login.jsp</result>
 			<result name="error">/error.jsp</result>
 			<result name="success">/success.jsp</result>
