@@ -14,5 +14,6 @@
 	<br /> ${tip}
 	<br /> Cookie: ${cookie.user.value}
 	<br /> ${requestScope.extra}
+	<s:debug />
 </body>
 </html>
