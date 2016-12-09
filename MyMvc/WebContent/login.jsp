@@ -12,5 +12,9 @@
 		<s:submit key="login" />
 	</s:form>
 	Test
+	<br />
+	TEMP=<s:property value="@java.lang.System@getenv('TEMP')" />
+	<br />
+	PI=<s:property value="@java.lang.Math@PI" />
 </body>
 </html>
