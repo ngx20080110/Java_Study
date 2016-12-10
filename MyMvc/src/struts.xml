@@ -6,7 +6,7 @@
 	<constant name="struts.custom.i18n.resources" value="global" />
 	<constant name="struts.ognl.allowStaticMethodAccess" value="true" />
 	
-	<!-- For lambda expression  -->
+	<!-- For lambda expression -->
 	<constant name="struts.ognl.enableOGNLEvalExpression" value="true" />
 	
 	<package name="mymvc" extends="struts-default">
