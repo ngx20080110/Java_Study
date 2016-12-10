@@ -60,5 +60,9 @@
 			</tr>
 		</s:iterator>
 	</table>
+	
+	<br />
+	<br />
+	<s:debug />
 </body>
 </html>
