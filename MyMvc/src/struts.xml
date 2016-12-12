@@ -26,6 +26,13 @@
 			<result name="success">/success.jsp</result>
 		</action>
 		
+		<action name="tag1" class="com.ngx20080110.action.TagAction">
+			<result name="done">succ.jsp</result>
+		</action>
+		<action name="tag2" class="com.ngx20080110.action.TagAction" method="login">
+			<result name="done">loginSucc.jsp</result>
+		</action>
+		
 		<action name="*">
 			<result>{1}.jsp</result>
 		</action>
