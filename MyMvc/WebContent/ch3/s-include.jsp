@@ -9,7 +9,7 @@
 	<br />
 	<s:include value="included-file.jsp"></s:include>
 	<s:include value="included-file.jsp">
-		<s:param name="author" value="'wugy'" />
+		<s:param name="author">wugy</s:param>
 	</s:include>
 	<br />
 	<br />
