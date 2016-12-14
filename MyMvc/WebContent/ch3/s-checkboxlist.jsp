@@ -20,4 +20,3 @@
 	<br />
 	<s:debug />
 </body>
-</html>
