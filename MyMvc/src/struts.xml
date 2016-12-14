@@ -25,6 +25,12 @@
 			<result name="error">/error.jsp</result>
 			<result name="success">/success.jsp</result>
 		</action>
+		<action name="pro" class="com.ngx20080110.action.ProAction">
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+			<interceptor-ref name="token"></interceptor-ref>
+			<result name="invalid.token">/refresh.jsp</result>
+			<result name="success">/show.jsp</result>
+		</action>
 		
 		<action name="tag1" class="com.ngx20080110.action.TagAction">
 			<result name="done">succ.jsp</result>
