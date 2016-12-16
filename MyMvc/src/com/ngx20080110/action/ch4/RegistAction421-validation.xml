@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE validators PUBLIC "-//Apache Struts//XWork Validator 1.0.3//EN"
+<!DOCTYPE validators PUBLIC
+        "-//Apache Struts//XWork Validator 1.0.3//EN"
         "http://struts.apache.org/dtds/xwork-validator-1.0.3.dtd">
 <validators>
 	<!-- 校验Action的name属性 -->
@@ -11,7 +12,7 @@
 		</field-validator>
 		<!-- 指定name属性必须匹配正则表达式 -->
 		<field-validator type="regex">
-			<param name="expression"><![CDATA[(\w{4,25})]]></param>
+			<param name="regex"><![CDATA[(\w{4,25})]]></param>
 			<message>您输入的用户名只能是字母和数字
 				，且长度必须在4到25之间</message>
 		</field-validator>
@@ -25,7 +26,7 @@
 		</field-validator>
 		<!-- 指定pass属性必须满足匹配指定的正则表达式 -->
 		<field-validator type="regex">
-			<param name="expression"><![CDATA[(\w{4,25})]]></param>
+			<param name="regex"><![CDATA[(\w{4,25})]]></param>
 			<message>您输入的密码只能是字母和数字
 				，且长度必须在4到25之间</message>
 		</field-validator>
