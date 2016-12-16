@@ -18,6 +18,10 @@
 			<exception-mapping result="sql" exception="java.sql.SQLException" />
 			<exception-mapping result="root" exception="java.lang.Exception" />
 		</global-exception-mappings>
+		<action name="ch4login" class="com.ngx20080110.action.ch4.LoginAction">
+			<result name="success">/ch4/success.jsp</result>
+			<result name="error">/ch4/error.jsp</result>
+		</action>
 		<action name="login" class="com.ngx20080110.action.LoginAction4">
 			<exception-mapping result="my" exception="com.ngx20080110.exception.MyException" />
 			<result name="my">/exception.jsp</result>
