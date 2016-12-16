@@ -30,6 +30,11 @@
 			<result name="success">/ch4/success.jsp</result>
 			<result name="error">/ch4/error.jsp</result>
 		</action>
+		<action name="login43" class="com.ngx20080110.action.ch4.LoginAction43">
+			<result name="input">/ch4/input43.jsp</result>
+			<result name="success">/ch4/success.jsp</result>
+			<result name="error">/ch4/error.jsp</result>
+		</action>
 		<action name="login" class="com.ngx20080110.action.LoginAction4">
 			<exception-mapping result="my" exception="com.ngx20080110.exception.MyException" />
 			<result name="my">/exception.jsp</result>

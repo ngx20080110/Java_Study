@@ -6,8 +6,11 @@
 <title><s:text name="exceptionPage" /></title>
 </head>
 <body>
-	異常信息: <s:property value="exception.message" />
+	異常信息: 
+	<pre>
+	<s:property value="exception.message" />
 	<br />
 	<s:property value="exceptionStack" />
+	</pre>
 </body>
 </html>
