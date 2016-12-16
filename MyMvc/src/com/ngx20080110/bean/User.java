@@ -21,4 +21,21 @@ public class User {
 		return "User [name=" + name + ", pass=" + pass + "]";
 	}
 	
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj) {
+			return true;
+		}
+		if (obj != null && obj.getClass() == User.class) {
+			User user = (User)obj;
+			if (this.getName().equals(user.getName())) {
+				return true;
+			}
+		}
+		return false;
+	}
+	@Override
+	public int hashCode() {
+		return name.hashCode();
+	}
 }
