@@ -31,6 +31,9 @@
 			<result name="invalid.token">/refresh.jsp</result>
 			<result name="success">/show.jsp</result>
 		</action>
+		<action name="demo" class="com.ngx20080110.action.DemoAction">
+			<result name="success">/ch3/demo.jsp</result>
+		</action>
 		
 		<action name="tag1" class="com.ngx20080110.action.TagAction">
 			<result name="done">succ.jsp</result>
