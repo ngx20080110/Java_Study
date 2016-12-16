@@ -3,16 +3,16 @@
 <%@ taglib prefix="s" uri="/struts-tags"%>
 <html>
 <head>
-<title>Set屬性的類型轉換</title>
+<title>List屬性的類型轉換</title>
 <s:head/>
 </head>
 <body>
 	<br />
-	<h3>Set屬性的類型轉換</h3>
-	<s:form action="login45">
-		<s:textfield name="users" label="first user" />
-		<s:textfield name="users" label="second user" />
-		<s:textfield name="birth" label="Birthday" />
+	<h3>List屬性的類型轉換</h3>
+	<s:form action="login46">
+		<s:iterator value="{1, 2, 3}" status="st">
+			<s:textfield name="users[%{#st.index}]" label="第%{#st.index + 1}個用戶信息" />
+		</s:iterator>
 		<tr>
 		<td colspan="2">
 		<s:submit value="Convert" theme="simple" />
