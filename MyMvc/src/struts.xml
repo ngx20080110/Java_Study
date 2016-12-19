@@ -80,6 +80,16 @@
 			<result name="input">/WEB-INF/content/upload_432.jsp</result>
 			<result>/WEB-INF/content/upload_succ432.jsp</result>
 		</action>
+		<action name="upload433" class="com.ngx20080110.action.ch4.Upload433Action">
+			<interceptor-ref name="fileUpload">
+				<param name="allowedTypes">image/png,image/gif,image/jpeg</param>
+				<param name="maximumSize">500000</param>
+			</interceptor-ref>
+			<interceptor-ref name="defaultStack" />
+			<param name="savePath">/upload</param>
+			<result name="input">/WEB-INF/content/upload_433.jsp</result>
+			<result>/WEB-INF/content/upload_succ433.jsp</result>
+		</action>
 		<action name="login" class="com.ngx20080110.action.LoginAction4">
 			<exception-mapping result="my" exception="com.ngx20080110.exception.MyException" />
 			<result name="my">/exception.jsp</result>
