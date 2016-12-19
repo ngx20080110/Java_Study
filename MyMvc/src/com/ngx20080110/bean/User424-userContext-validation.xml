@@ -9,7 +9,7 @@
 			<message key="name.required" />
 		</field-validator>
 		<field-validator type="regex">
-			<param name="regex"><![CDATA[(\w{4,25})]]></param>
+			<param name="regex">(\w{4,25})</param>
 			<message key="name.regex" />
 		</field-validator>
 	</field>
