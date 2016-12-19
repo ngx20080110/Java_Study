@@ -9,7 +9,7 @@
 	<!-- For lambda expression -->
 	<constant name="struts.ognl.enableOGNLEvalExpression" value="true" />
 	
-	<package name="mymvc" extends="struts-default">
+	<package name="mymvc" extends="struts-default" strict-method-invocation="true">
 		<global-results>
 			<result name="sql">/exception.jsp</result>
 			<result name="root">/exception.jsp</result>
@@ -71,6 +71,21 @@
 		<action name="demo" class="com.ngx20080110.action.DemoAction">
 			<result name="success">/ch3/demo.jsp</result>
 		</action>
+		<action name="*Pro" class="com.ngx20080110.action.ch4.Regist423Action" method="{1}">
+			<result name="input">/WEB-INF/content/form423.jsp</result>
+			<result>/WEB-INF/content/show423.jsp</result>
+			<allowed-methods>regist,login</allowed-methods>
+		</action>
+		<!-- 
+		<action name="loginPro" class="com.ngx20080110.action.ch4.Regist423Action" method="login">
+			<result name="input">/WEB-INF/content/form423.jsp</result>
+			<result>/WEB-INF/content/show423.jsp</result>
+		</action>
+		<action name="registPro" class="com.ngx20080110.action.ch4.Regist423Action" method="regist">
+			<result name="input">/WEB-INF/content/form423.jsp</result>
+			<result>/WEB-INF/content/show423.jsp</result>
+		</action>
+		 -->
 		
 		<action name="tag1" class="com.ngx20080110.action.TagAction">
 			<result name="done">succ.jsp</result>
