@@ -90,6 +90,15 @@
 			<result name="input">/WEB-INF/content/upload_433.jsp</result>
 			<result>/WEB-INF/content/upload_succ433.jsp</result>
 		</action>
+		<action name="download" class="com.ngx20080110.action.ch4.FileDownloadAction">
+			<param name="inputPath">\upload</param>
+			<result name="success" type="stream">
+				<param name="contentType">image/jpg</param>
+				<param name="inputName">targetFile</param>
+				<param name="contentDisposition">filename="test.jpg"</param>
+				<param name="bufferSize">4096</param>
+			</result>
+		</action>
 		<action name="login" class="com.ngx20080110.action.LoginAction4">
 			<exception-mapping result="my" exception="com.ngx20080110.exception.MyException" />
 			<result name="my">/exception.jsp</result>
