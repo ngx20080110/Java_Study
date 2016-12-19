@@ -46,7 +46,12 @@
 			<result name="error">/ch4/error.jsp</result>
 		</action>
 		<action name="login421" class="com.ngx20080110.action.ch4.RegistAction421">
-			<result name="input">/ch4/regist.jsp</result>
+			<result name="input">/WEB-INF/content/regist.jsp</result>
+			<result name="success">/ch4/success.jsp</result>
+			<result name="error">/ch4/error.jsp</result>
+		</action>
+		<action name="login422" class="com.ngx20080110.action.ch4.RegistAction422">
+			<result name="input">/WEB-INF/content/regist422.jsp</result>
 			<result name="success">/ch4/success.jsp</result>
 			<result name="error">/ch4/error.jsp</result>
 		</action>
@@ -75,7 +80,7 @@
 		</action>
 		
 		<action name="*">
-			<result>{1}.jsp</result>
+			<result>/WEB-INF/content/{1}.jsp</result>
 		</action>
 	</package>
 </struts>

@@ -45,7 +45,7 @@
 			<!-- 下面指定日期字符串时，必须使用本Locale的日期格式 -->
 			<param name="min">1900-01-01</param>
 			<param name="max">2050-02-21</param>
-			<message key="birth.range" />
+			<message key="birth.range">Test message</message>
 		</field-validator>
 	</field>
 </validators>

@@ -9,7 +9,7 @@
 <body>
 	<br />
 	<h2>請輸入您的注冊信息</h2>
-	<s:form action="login421">
+	<s:form action="login421" validate="true">
 		<s:textfield name="name" label="用戶名" />
 		<s:textfield name="pass" label="密碼" />
 		<s:textfield name="age" label="年齡" />
