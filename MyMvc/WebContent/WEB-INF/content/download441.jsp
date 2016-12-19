@@ -8,7 +8,7 @@
 </head>
 <body>
 	<br />
-	Image 1<a href="download441.action?inputPath=3437_201612141443464.jpg">Download</a>
+	Image 1<a href="download.action?filename=3437_201612141443464.jpg">Download</a>
 	
 </body>
 </html>

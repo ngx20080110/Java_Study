@@ -91,11 +91,11 @@
 			<result>/WEB-INF/content/upload_succ433.jsp</result>
 		</action>
 		<action name="download" class="com.ngx20080110.action.ch4.FileDownloadAction">
-			<param name="inputPath">\upload</param>
+			<param name="downloadDir">/WEB-INF/upload/</param>
 			<result name="success" type="stream">
-				<param name="contentType">image/jpg</param>
+				<param name="contentType">application/octet-stream</param>
 				<param name="inputName">targetFile</param>
-				<param name="contentDisposition">filename="test.jpg"</param>
+				<param name="contentDisposition">attachment;filename="${filename}"</param>
 				<param name="bufferSize">4096</param>
 			</result>
 		</action>
