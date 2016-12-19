@@ -39,4 +39,9 @@ public class FileDownloadAction extends ActionSupport {
 		   }
 		return ServletActionContext.getServletContext().getResourceAsStream(realPath);
 	}
+	
+	public String execute() throws Exception {
+		System.out.println("execute is called");
+		return SUCCESS;
+	}
 }
