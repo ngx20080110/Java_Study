@@ -55,6 +55,11 @@
 			<result name="success">/ch4/success.jsp</result>
 			<result name="error">/ch4/error.jsp</result>
 		</action>
+		<action name="regist424Pro" class="com.ngx20080110.action.ch4.Regist424Action">
+			<result name="input">/WEB-INF/content/regist424.jsp</result>
+			<result name="success">/ch4/success.jsp</result>
+			<result name="error">/ch4/error.jsp</result>
+		</action>
 		<action name="login" class="com.ngx20080110.action.LoginAction4">
 			<exception-mapping result="my" exception="com.ngx20080110.exception.MyException" />
 			<result name="my">/exception.jsp</result>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE validators PUBLIC
+        "-//Apache Struts//XWork Validator 1.0.3//EN"
+        "http://struts.apache.org/dtds/xwork-validator-1.0.3.dtd">
+<validators>
+	<field name="name">
+		<field-validator type="requiredstring">
+			<param name="trim">true</param>
+			<message key="name.required" />
+		</field-validator>
+		<field-validator type="regex">
+			<param name="regex"><![CDATA[(\w{4,25})]]></param>
+			<message key="name.regex" />
+		</field-validator>
+	</field>
+	<field name="pass">
+		<!-- 指定pass属性必须满足必填规则 -->
+		<field-validator type="requiredstring" short-circuit="true">
+			<param name="trim">true</param>
+			<message key="pass.required" />
+		</field-validator>
+		<!-- 指定pass属性必须满足匹配指定的正则表达式 -->
+		<field-validator type="regex">
+			<param name="regex"><![CDATA[(\w{4,25})]]></param>
+			<message key="pass.regex" />
+		</field-validator>
+	</field>
+	<!-- 指定age属性必须在指定范围内-->
+	<field name="age">
+		<field-validator type="int">
+			<param name="min">1</param>
+			<param name="max">150</param>
+			<message key="age.range" />
+		</field-validator>
+	</field>
+	<!-- 指定birth属性必须在指定范围内-->
+	<field name="birth">
+		<field-validator type="date">
+			<!-- 下面指定日期字符串时，必须使用本Locale的日期格式 -->
+			<param name="min">1900-01-01</param>
+			<param name="max">2050-02-21</param>
+			<message key="birth.range">Test message</message>
+		</field-validator>
+	</field>
+</validators>
