@@ -13,6 +13,7 @@
 		<global-results>
 			<result name="sql">/exception.jsp</result>
 			<result name="root">/exception.jsp</result>
+			
 		</global-results>
 		<global-exception-mappings>
 			<exception-mapping result="sql" exception="java.sql.SQLException" />
