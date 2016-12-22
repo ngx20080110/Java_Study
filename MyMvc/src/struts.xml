@@ -10,6 +10,14 @@
 	<constant name="struts.ognl.enableOGNLEvalExpression" value="true" />
 	
 	<package name="mymvc" extends="struts-default" strict-method-invocation="true">
+		<interceptors>
+			<!-- 配置mysimple拦截器 -->
+			<interceptor name="mysimple"
+				class="com.ngx20080110.interceptor.SimpleInterceptor">
+				<!-- 为拦截器指定参数值 -->
+				<param name="name">简单拦截器</param>
+			</interceptor>
+		</interceptors>
 		<global-results>
 			<result name="sql">/exception.jsp</result>
 			<result name="root">/exception.jsp</result>
@@ -45,6 +53,16 @@
 			<result name="input">/ch4/input46.jsp</result>
 			<result name="success">/ch4/success46.jsp</result>
 			<result name="error">/ch4/error.jsp</result>
+		</action>
+		<action name="login_47" class="com.ngx20080110.action.ch4.LoginAction47">
+			<result name="error">/WEB-INF/content/error.jsp</result>
+			<result name="success">/WEB-INF/content/welcome.jsp</result> 
+			<!-- 配置系统的默认拦截器 -->
+			<interceptor-ref name="defaultStack"/>
+			<!-- 应用自定义的mysimple拦截器 -->
+			<interceptor-ref name="mysimple">
+				<param name="name">改名后的拦截器</param>
+			</interceptor-ref>
 		</action>
 		<action name="login421" class="com.ngx20080110.action.ch4.RegistAction421">
 			<result name="input">/WEB-INF/content/regist.jsp</result>
