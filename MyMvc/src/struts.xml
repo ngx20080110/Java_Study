@@ -22,11 +22,12 @@
 			</interceptor>
 			<interceptor name="preresult" class="com.ngx20080110.interceptor.BeforeResultInterceptor">
 			</interceptor>
+			<interceptor name="authority" class="com.ngx20080110.interceptor.AuthorityInterceptor"></interceptor>
 		</interceptors>
 		<global-results>
 			<result name="sql">/exception.jsp</result>
 			<result name="root">/exception.jsp</result>
-			
+			<result name="login">/WEB-INF/content/login410.jsp</result>
 		</global-results>
 		<global-exception-mappings>
 			<exception-mapping result="sql" exception="java.sql.SQLException" />
@@ -88,6 +89,15 @@
 			<!-- 应用自定义的mysimple拦截器 -->
 			<interceptor-ref name="preresult">
 			</interceptor-ref>
+		</action>
+		<action name="login_410" class="com.ngx20080110.action.ch4.LoginAction410">
+			<result name="error">/WEB-INF/content/error.jsp</result>
+			<result name="success">/WEB-INF/content/welcome.jsp</result> 
+		</action>
+		<action name="upload">
+			<result>/WEB-INF/content/upload.jsp</result>
+			<interceptor-ref name="defaultStack"/>
+			<interceptor-ref name="authority"></interceptor-ref>
 		</action>
 		<action name="login421" class="com.ngx20080110.action.ch4.RegistAction421">
 			<result name="input">/WEB-INF/content/regist.jsp</result>
