@@ -3,11 +3,24 @@
         "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
         "http://struts.apache.org/dtds/struts-2.5.dtd">
 <struts>
+	<constant name="struts.i18n.encoding" value="UTF-8" />
 	<constant name="struts.custom.i18n.resources" value="global" />
 	<constant name="struts.ognl.allowStaticMethodAccess" value="true" />
 	
 	<!-- For lambda expression -->
 	<constant name="struts.ognl.enableOGNLEvalExpression" value="true" />
+	
+	<package name="jsonex" extends="json-default">
+		<action name="jsonexample" class="com.ngx20080110.action.ch4.JsonExample">
+			<result type="json">
+				<param name="noCache">true</param>
+				<param name="contentType">text/html</param>
+			</result>
+		</action>
+		<action name="*">
+			<result>/WEB-INF/content/{1}.jsp</result>
+		</action>
+	</package>
 	
 	<package name="mymvc" extends="struts-default" strict-method-invocation="true">
 		<interceptors>
