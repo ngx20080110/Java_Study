@@ -14,8 +14,12 @@ public class NewsManager {
 		Session sess = sf.openSession();
 		Transaction tx = sess.beginTransaction();
 		News news = new News();
-		news.setTitle("Java");
-		news.setContent("Java is good");
+		news.setTitle("Linux");
+		news.setContent("Linux is nice");
+//		News news = (News)sess.load(News.class, new Integer(2));
+//		System.out.println("news title=" + news.getTitle());
+//		news.setTitle("Oracle");
+//		news.setContent("Oracle is very good");
 		sess.save(news);
 		tx.commit();
 		sess.close();
