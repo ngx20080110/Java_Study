@@ -20,6 +20,8 @@
 			<interceptor name="methodfilter" class="com.ngx20080110.interceptor.MyMethodFilterInterceptor">
 				<param name="name">攔截方法的攔截器</param>
 			</interceptor>
+			<interceptor name="preresult" class="com.ngx20080110.interceptor.BeforeResultInterceptor">
+			</interceptor>
 		</interceptors>
 		<global-results>
 			<result name="sql">/exception.jsp</result>
@@ -76,6 +78,15 @@
 			<interceptor-ref name="methodfilter">
 				<param name="name">改名后的拦截器</param>
 				<param name="excludeMethods">execute</param>
+			</interceptor-ref>
+		</action>
+		<action name="login_49" class="com.ngx20080110.action.ch4.LoginAction48">
+			<result name="error">/WEB-INF/content/error.jsp</result>
+			<result name="success">/WEB-INF/content/welcome.jsp</result> 
+			<!-- 配置系统的默认拦截器 -->
+			<interceptor-ref name="defaultStack"/>
+			<!-- 应用自定义的mysimple拦截器 -->
+			<interceptor-ref name="preresult">
 			</interceptor-ref>
 		</action>
 		<action name="login421" class="com.ngx20080110.action.ch4.RegistAction421">
