@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.ngx20080110.bean.ch5">
+	<class name="News2" table="news_table">
+		<id name="id">
+			<generator class="sequence">
+				<param name="sequence">SEQ_NEWS</param>
+			</generator>
+		</id>
+		<property name="title" />
+		<property name="content" />
+		<property name="fullContent" formula="(select concat(nt.title, nt.content) from news_table nt where nt.id=id)" />
+	</class>
+</hibernate-mapping>

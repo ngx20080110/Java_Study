@@ -20,5 +20,6 @@
 		<property name="hibernate.c3p0.idle_test_period">3000</property>
   		
   		<mapping resource="com/ngx20080110/bean/ch5/News.hbm.xml"></mapping>
+  		<mapping resource="com/ngx20080110/bean/ch5/News2.hbm.xml"></mapping>
 	</session-factory>
 </hibernate-configuration>
