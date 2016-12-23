@@ -24,5 +24,6 @@
   		<mapping resource="com/ngx20080110/bean/ch5/News3.hbm.xml"></mapping>
   		<mapping resource="com/ngx20080110/bean/ch5/Person.hbm.xml"></mapping>
   		<mapping resource="com/ngx20080110/bean/ch5/Person2.hbm.xml"></mapping>
+  		<mapping resource="com/ngx20080110/bean/ch5/Person3.hbm.xml"></mapping>
 	</session-factory>
 </hibernate-configuration>
