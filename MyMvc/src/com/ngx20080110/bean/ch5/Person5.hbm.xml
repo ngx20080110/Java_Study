@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.ngx20080110.bean.ch5">
+	<class name="Person5" table="person5">
+		<id name="id" column="person_id">
+			<generator class="sequence">
+				<param name="sequence">SEQ_PERSON</param>
+			</generator>
+		</id>
+		<property name="name" type="string" />
+		<property name="age" type="int" />
+		<set name="trainings" table="training" sort="natural">
+			<key column="person_id" not-null="true" />
+			<element type="string" column="training_name" not-null="true" />
+		</set>
+	</class>
+</hibernate-mapping>
