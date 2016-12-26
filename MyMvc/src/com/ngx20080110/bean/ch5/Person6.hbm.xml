@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.ngx20080110.bean.ch5">
+	<class name="Person6" table="person6">
+		<id name="id" column="person_id">
+			<generator class="sequence">
+				<param name="sequence">SEQ_PERSON</param>
+			</generator>
+		</id>
+		<property name="age" type="int" />
+		<component name="name" class="Name6" unique="true">
+			<parent name="owner"/>
+			<property name="first" />
+			<property name="last" />
+			<map name="power" table="name_power">
+				<key column="person_name_id" not-null="true" />
+				<map-key column="name_aspect" type="string" />
+				<element column="name_power" type="int" />
+			</map>
+		</component>
+	</class>
+</hibernate-mapping>
