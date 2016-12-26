@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.ngx20080110.bean.ch5">
+	<class name="Person9" table="person9">
+		<composite-id name="name" class="Name9">
+			<key-property name="first" type="string" />
+			<key-property name="last" type="string" />
+		</composite-id>
+		<property name="age" type="int" />
+	</class>
+</hibernate-mapping>

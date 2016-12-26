@@ -36,5 +36,6 @@
   		<mapping resource="com/ngx20080110/bean/ch5/Person6.hbm.xml"></mapping>
   		<mapping resource="com/ngx20080110/bean/ch5/Person7.hbm.xml"></mapping>
   		<mapping resource="com/ngx20080110/bean/ch5/Person8.hbm.xml"></mapping>
+  		<mapping resource="com/ngx20080110/bean/ch5/Person9.hbm.xml"></mapping>
 	</session-factory>
 </hibernate-configuration>
