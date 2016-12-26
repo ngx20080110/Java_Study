@@ -13,6 +13,7 @@
 		<welcome-file>default.jsp</welcome-file>
 		<welcome-file>https://github.com/mornhuang/example/tree/master/java/%E8%BD%BB%E9%87%8F%E7%BA%A7Java%20EE%E4%BC%81%E4%B8%9A%E5%BA%94%E7%94%A8%E5%AE%9E%E6%88%98%EF%BC%88%E7%AC%AC3%E7%89%88%EF%BC%89%20%20%E4%BB%A3%E7%A0%81</welcome-file>
 	</welcome-file-list>
+	<!-- 447 -->
 	<filter>
 		<filter-name>action2</filter-name>
 		<filter-class>org.apache.struts2.dispatcher.filter.StrutsPrepareAndExecuteFilter</filter-class>
