@@ -1,0 +1,173 @@
+<html>
+<head>
+<title>Lucky Draw</title>
+<link rel="stylesheet" href="bootstrap.min.css">
+<style type="text/css">
+.header_outer {
+	display: table;
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	background-color: #275483;
+}
+
+.header_middle {
+	display: table-cell;
+	vertical-align: top;
+}
+
+.header_inner {
+	margin-top: 16px;
+	margin-bottom: 16px;
+	margin-left: auto;
+	margin-right: auto;
+	width: 100%;
+	margin-left: auto;
+}
+</style>
+<script type="text/javascript" src="jquery-3.1.1.min.js"></script>
+<script src="bootstrap.min.js"></script>
+<script type="text/javascript">
+	var bodies;
+	var min = 0;
+	var max;
+	var zeros = "00000000";
+	var selectedBodies = new Object();
+	var t;
+	var times4 = 0;
+
+	function sleep(delay) {
+		var start = new Date().getTime();
+		while (new Date().getTime() < start + delay)
+			;
+	}
+
+	function randomming() {
+		var rand = parseInt(Math.random() * max);
+		$("#span_info").html(bodies[rand].lpad("0", 8));
+		t = setTimeout("randomming()", 50)
+	}
+
+	String.prototype.lpad = function(padString, length) {
+		var str = this;
+		while (str.length < length)
+			str = padString + str;
+		return str;
+	}
+
+	String.prototype.rpad = function(padString, length) {
+		var str = this;
+		while (str.length < length)
+			str = str + padString;
+		return str;
+	}
+
+	function get_body() {
+		var got = false;
+		while (!got) {
+			var rand = parseInt(Math.random() * max);
+			if (selectedBodies[bodies[rand]] == undefined) {
+				return bodies[rand];
+			} else {
+				console.log("selectedBodies[bodies[rand]]="
+						+ selectedBodies[bodies[rand]]);
+			}
+		}
+	}
+
+	function load_list(event) {
+		$("#span_info").html("加載候選名單...");
+		var list_txt = event.target;
+		var reader = new FileReader();
+		reader.onload = function(progressEvent) {
+			bodies = this.result.split('\n');
+			max = bodies.length;
+			$("#span_info").html("候選名單有" + bodies.length + "名");
+			$("button").prop("disabled", false);
+		};
+		reader.readAsText(list_txt.files[0]);
+	}
+
+	function lucky_draw_1() {
+		var selectBody = get_body();
+		clearTimeout(t);
+		$("#span_info").html("");
+		$("#ld1").append(selectBody.lpad("0", 8));
+		selectedBodies[selectBody] = selectBody;
+	}
+
+	function lucky_draw_2() {
+		var selectBody = get_body();
+		clearTimeout(t);
+		$("#span_info").html("");
+		$("#ld2").append(selectBody.lpad("0", 8));
+		selectedBodies[selectBody] = selectBody;
+	}
+
+	function lucky_draw_3() {
+		var selectBody = get_body();
+		clearTimeout(t);
+		$("#span_info").html("");
+		$("#ld3").append(selectBody.lpad("0", 8));
+		selectedBodies[selectBody] = selectBody;
+	}
+
+	function lucky_draw_4() {
+		var selectBody = get_body();
+		times4++;
+		console.log("lucky_draw_4->" + times4);
+		$("#ld4").append(selectBody.lpad("0", 8) + ", ");
+		selectedBodies[selectBody] = selectBody;
+		if (times4 < 40) {
+			setTimeout("lucky_draw_4()", 1000);
+		}
+		else {
+			clearTimeout(t);
+			$("#span_info").html("");
+		}
+	}
+</script>
+</head>
+<body>
+	<div class="header_outer">
+		<div class="header_middle">
+			<div class="header_inner" align="center">
+				<img src="logo.png" style="margin-bottom: 16px" />
+				<table width="640px" class="table-bordered">
+					<tr>
+						<td width="20%" align="center" style="padding: 8px; color: white;">候選名單</td>
+						<td width="80%" style="color: white"><input type="file"
+							name="file" id="file" class="form-control"
+							onchange="load_list(event);" /></td>
+					</tr>
+					<tr>
+						<td width="20%" align="center" style="padding: 8px"><button
+								id="btn4" disabled="disabled" type="button"
+								class="btn btn-primary" onclick="$('#btn4').prop('disabled', true); randomming(); setTimeout('lucky_draw_4()', 1000);">四等獎(40名)</button></td>
+						<td width="80%" id="ld4" style="color: white; font-size: 20px;"></td>
+					</tr>
+					<tr>
+						<td align="center" style="padding: 8px"><button id="btn3"
+								type="button" disabled="disabled" class="btn btn-success"
+								onclick="$('#btn3').prop('disabled', true); randomming(); setTimeout('lucky_draw_3()', 1000);">三等獎</button></td>
+						<td id="ld3" style="color: white; font-size: 32px;"></td>
+					</tr>
+					<tr>
+						<td align="center" style="padding: 8px"><button id="btn2"
+								type="button" disabled="disabled" class="btn btn-warning"
+								onclick="$('#btn2').prop('disabled', true); randomming(); setTimeout('lucky_draw_2()', 1000);">二等獎</button></td>
+						<td id="ld2" style="color: white; font-size: 32px;"></td>
+					</tr>
+					<tr>
+						<td align="center" style="padding: 8px"><button id="btn1"
+								type="button" disabled="disabled" class="btn btn-danger"
+								onclick="$('#btn1').prop('disabled', true); randomming(); setTimeout('lucky_draw_1()', 1000);">一等獎</button></td>
+						<td id="ld1" style="color: white; font-size: 32px;"></td>
+					</tr>
+				</table>
+				<span id="span_info" style="color: white; font-size: 32px;"> </span>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
