@@ -2,15 +2,38 @@
 <!DOCTYPE hibernate-mapping PUBLIC
 	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<hibernate-mapping package="com.ngx20080110.bean.ch6">
+<hibernate-mapping package="com.ngx20080110.bean.ch6" auto-import="false">
 	<class name="Person1" table="person1">
 		<id name="id" column="person_id">
+			<!-- 
 			<generator class="sequence">
 				<param name="sequence">SEQ_PERSON</param>
+			</generator>
+			 -->
+			<generator class="foreign">
+				<param name="property">address</param>
 			</generator>
 		</id>
 		<property name="name" type="string" />
 		<property name="age" type="int" />
+		<!-- 
 		<many-to-one name="address" cascade="all" class="Address1" column="address_id" />
+		 -->
+		<!-- 
+		<join table="person1_address1">
+			<key column="person_id" />
+			<many-to-one name="address" cascade="all" class="Address1" column="address_id" />
+		</join>
+		 -->
+		<!-- 
+		<many-to-one name="address" cascade="all" unique="true" class="Address1" column="address_id" />
+		 -->
+		<!-- 
+		<join table="person1_address1">
+			<key column="person_id" />
+			<many-to-one name="address" cascade="all" unique="true" class="Address1" column="address_id" />
+		</join>
+		 -->
+		<one-to-one name="address" />
 	</class>
 </hibernate-mapping>
