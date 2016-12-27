@@ -7,7 +7,7 @@
 		<property name="hibernate.connection.driver_class">oracle.jdbc.driver.OracleDriver</property>
   		<property name="hibernate.connection.password">oracle</property>
   		<property name="hibernate.dialect">org.hibernate.dialect.Oracle10gDialect</property>
-  		<property name="hibernate.hbm2ddl.auto">update</property>
+  		<property name="hibernate.hbm2ddl.auto">create</property>
   		<property name="show_sql">true</property>
   		
   		<!-- 
@@ -37,6 +37,8 @@
   		<mapping resource="com/ngx20080110/bean/ch5/Person7.hbm.xml"></mapping>
   		<mapping resource="com/ngx20080110/bean/ch5/Person8.hbm.xml"></mapping>
   		<mapping resource="com/ngx20080110/bean/ch5/Person9.hbm.xml"></mapping>
+  		<mapping resource="com/ngx20080110/bean/ch6/Person1.hbm.xml"></mapping>
+  		<mapping resource="com/ngx20080110/bean/ch6/Address1.hbm.xml"></mapping>
   		<mapping class="com.ngx20080110.bean.ch5.Person10" />
 	</session-factory>
 </hibernate-configuration>

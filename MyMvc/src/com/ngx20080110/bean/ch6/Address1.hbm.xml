@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.ngx20080110.bean.ch6">
+	<class name="Address1" table="address1">
+		<id name="addressId" column="address_id">
+			<generator class="sequence">
+				<param name="sequence">SEQ_ADDRESS</param>
+			</generator>
+		</id>
+		<property name="addressDetail" />
+	</class>
+</hibernate-mapping>

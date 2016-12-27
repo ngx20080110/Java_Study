@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.ngx20080110.bean.ch6">
+	<class name="Person1" table="person1">
+		<id name="id" column="person_id">
+			<generator class="sequence">
+				<param name="sequence">SEQ_PERSON</param>
+			</generator>
+		</id>
+		<property name="name" type="string" />
+		<property name="age" type="int" />
+		<many-to-one name="address" cascade="all" class="Address1" column="address_id" />
+	</class>
+</hibernate-mapping>
