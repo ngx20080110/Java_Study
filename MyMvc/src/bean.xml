@@ -6,4 +6,9 @@
 	<bean id="personService" class="com.ngx20080110.bean.ch7.PersonService">
 		<property name="name" value="Gordon"/>
 	</bean>
+	<bean id="chinese" class="com.ngx20080110.ch7.service.Chinese">
+		<property name="axe" ref="steelAxe" />
+	</bean>
+	<bean id="stoneAxe" class="com.ngx20080110.ch7.service.StoneAxe" />
+	<bean id="steelAxe" class="com.ngx20080110.ch7.service.SteelAxe" />
 </beans>
